@@ -132,7 +132,7 @@ section button:hover {
 @media (max-width:767px) {
   #frmBookingFlight .gap-mini{margin:0}
   .mobile-margin-bottom-progressbar{margin-bottom:0!important}
-  .mobile-margin-left-right-15{margin-left:-15px;margin-right:-15px}
+  .mobile-margin-left-right-15{margin-left:-15px!important;margin-right:-15px!important}
   .mobile-info-custommer-dep,.mobile-info-pax{overflow:hidden;border-radius:5px;background-color:#fff;border:solid 1px #d7d7d7;padding:2%;margin:5px 0 10px;box-shadow:0 3px 2px #ddd}
   .mobile-go-air{padding-right:5px}
   .mb-float-left{float:left;font-size:1em!important;line-height:2.1}
@@ -143,9 +143,28 @@ section button:hover {
   .mobile-name-aircode{float:left}
   .mobile-name-aircode b{padding-left:10px}
   .mobile-dep-arv-time{float:right}
-  input[class*="passenger_name"]{text-transform:uppercase}
+  input[class*="passenger_name"], input[id*="contact_name"]{text-transform:uppercase}
   .mobile-small-gap{margin:10px 0!important;margin-bottom:15px!important}
   #wgbtnsearch{width:100%!important}
+  .methods{margin:0px}
+  .mobile-mothods-content-first {
+    padding-left: 0px!important;
+  }
+  #content_transfer .mb30 {
+    margin-bottom: 0px !important;
+  }
+  #content_office .mb30 {
+    margin-bottom: 10px !important;
+    margin-top: -10px;
+  }
+  #content_athome .mobile-methods-content-athome {
+    margin-top: -5px;
+    padding: 0px !important;
+  }
+  #content_athome .mb30 {
+    margin-bottom: 10px !important;
+    margin-top: -15px;
+  }
 }
 
 /* IPAD */

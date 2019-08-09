@@ -506,7 +506,7 @@
     </div>
     <!-- #col-md-8 -->
     <div class="col-md-4">
-        <div class="wgbox">
+        <div class="wgbox mobile-margin-left-right-15">
             <?php get_sidebar(); ?>
         </div>
     </div>
