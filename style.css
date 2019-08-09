@@ -128,7 +128,7 @@ section button:hover {
 
 /* PAGE THÔNG TIN HÀNH KHÁCH */
 .config-info-padding-top{padding-top:10px}
-
+input[class*="passenger_name"], input[id*="contact_name"]{text-transform:uppercase}
 @media (max-width:767px) {
   #frmBookingFlight .gap-mini{margin:0}
   .mobile-margin-bottom-progressbar{margin-bottom:0!important}
@@ -143,28 +143,14 @@ section button:hover {
   .mobile-name-aircode{float:left}
   .mobile-name-aircode b{padding-left:10px}
   .mobile-dep-arv-time{float:right}
-  input[class*="passenger_name"], input[id*="contact_name"]{text-transform:uppercase}
   .mobile-small-gap{margin:10px 0!important;margin-bottom:15px!important}
   #wgbtnsearch{width:100%!important}
-  .methods{margin:0px}
-  .mobile-mothods-content-first {
-    padding-left: 0px!important;
-  }
-  #content_transfer .mb30 {
-    margin-bottom: 0px !important;
-  }
-  #content_office .mb30 {
-    margin-bottom: 10px !important;
-    margin-top: -10px;
-  }
-  #content_athome .mobile-methods-content-athome {
-    margin-top: -5px;
-    padding: 0px !important;
-  }
-  #content_athome .mb30 {
-    margin-bottom: 10px !important;
-    margin-top: -15px;
-  }
+  .methods{margin:0}
+  .mobile-mothods-content-first{padding-left:0!important}
+  #content_transfer .mb30{margin-bottom:0!important}
+  #content_office .mb30{margin-bottom:10px!important;margin-top:-10px}
+  #content_athome .mobile-methods-content-athome{margin-top:-5px;padding:0!important}
+  #content_athome .mb30{margin-bottom:10px!important;margin-top:-15px}
 }
 
 /* IPAD */
