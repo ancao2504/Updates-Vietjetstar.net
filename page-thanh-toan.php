@@ -209,15 +209,15 @@
                     <label for="method_transfer" class="methods-header active">
                         <input checked="checked" type="radio" id="method_transfer" name="radio" />
                         <span class="text-transfer">Chuyển khoản</span>
-                        <p class="note-text-transfer">Đây là hình thức thanh toán tối ưu nhất và không mất phí. Quý khách có thể chọn lựa tài khoản ngân hàng chuyển đến cùng hệ thống với cái đang sử dụng nhằm đảm bảo tiền được chuyển sang nhanh.</p>
+                        <p class="note-text-transfer">Đây là hình thức thanh toán tốt nhất : không mất phí, nhanh và an toàn (do là ngân hàng bảo vệ bạn). Lưu ý nên chuyển cùng hệ thống để nhanh.</p>
                     </label>
                 </div>
                 <div class="methods-content clearfix" id="content_transfer" style="display: block;">
                     <p style="padding-left: 10px;" class="mobile-mothods-content-first">
-                        Khi thực hiện chuyển khoản xin vui lòng ghi rõ mã đơn hàng, tên người liên hệ đặt vé hoặc số di động. Hoàn tất việc chuyển tiền đề nghị nhắn tin để xác thực : <span class="accountant-phone-text"><?php echo ot_get_option('accountant_phone'); ?></span> <br/>
-                        Cú pháp tin nhắn:<br>
-                        <b>"0989 456 789 da thanh toan"</b><br/>
-                        <b>Bạn chỉ cần nhắn số ĐT</b>
+                        Khi chuyển khoản vui lòng ghi số ĐT để chúng tôi chủ động liên hệ xác thực. Hoặc chúng ta nhắn tin / gọi điện vào đây :
+                        <?php $phoneCusAdd = '0909 58 8080'; ?>
+                        <span class="accountant-phone-text"><?php echo $phoneCusAdd.' - '.ot_get_option('accountant_phone'); ?></span> <br/>
+                        <div class="sms-transfer">Cú pháp: "0989 456 789 mua ve JS3153SDA"</div>
                     </p>
                     <p>
                         <button type="submit" name="sm_transfer_method" class="button redcus pull-right mb30"> 
@@ -234,7 +234,7 @@
                     <label for="method_office" class="methods-header">
                         <input type="radio" id="method_office" name="radio" />
                         <span class="text-office"> Tại văn phòng</span> 
-                        <p class="note-text-office">Sau khi đặt hàng thành công, quý khách có thể đến văn phòng ở địa chỉ <strong><?php echo ot_get_option('company_address'); ?></strong> để thanh toán và nhận vé.</p>
+                        <p class="note-text-office">Sau khi hoàn tất đặt giữ chỗ vé, bạn ghé văn phòng chúng tôi để thanh toán trực tiếp: <strong><?php echo ot_get_option('company_address'); ?></strong> để thanh toán và nhận vé.</p>
                     </label>
                 </div>
                 <div class="methods-content" id="content_office">
@@ -254,7 +254,7 @@
                     <label for="method_athome" class="methods-header">
                         <input type="radio" id="method_athome" name="radio" />
                         <span class="text-home">Tại nhà</span> 
-                        <p class="note-text-home">Chúng tôi sẽ tiến hành in mặt vé, đi cùng phiếu thu số tiền phải trả của Quý khách. Đội giao vé nhanh sẽ liên hệ quý khách trong thời gian sớm nhất.</p>
+                        <p class="note-text-home">Bạn đặt giữ chỗ vé xong, xem lại kỹ càng và đảm bảo thông tin chính xác. Chúng tôi sẽ in mặt vé và giao đến tận nhà. Phí giao vé sẽ tuỳ thuộc quãng đường và thời gian.</p>
                     </label>
                 </div>
                 <div class="methods-content" id="content_athome">

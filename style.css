@@ -127,6 +127,8 @@ input[class*="passenger_name"], input[id*="contact_name"]{text-transform:upperca
 /* PAGE THANH TOÁN */
 .text-transfer,.text-office,.text-home{position:absolute;padding-left:5px}
 .note-text-transfer,.note-text-office,.note-text-home{text-align:justify;margin-top:5px!important}
+.mobile-mothods-content-first{padding-left:0px!important}
+.sms-transfer{margin-top:5px}
 /* PAGE HOÀN TẤT ĐƠN HÀNG */
 .logo img{height:auto!important;width:auto!important}
 .color-phone-order-booking{color:#E10000}

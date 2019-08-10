@@ -894,7 +894,7 @@
                         <div class="row">
                             <div  class="col-md-7 col-sm-7 col-xs-12" >
                                 <div class="form-group">
-                                    <label for="contact_email" style="font-weight:bold">Gmail <?= $need ?></label> 
+                                    <label for="contact_email" style="font-weight:bold">Gmail </label> 
                                     <input type="text" name="contact_email" id="contact_email" class="form-control" />
                                 </div>
                             </div>
