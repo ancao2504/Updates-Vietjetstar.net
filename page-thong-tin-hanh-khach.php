@@ -40,6 +40,7 @@
     
     
     $need = '<span style="color:#ED0000;font-weight:bold">*</span>';
+    $attentionStart = '<span style="color:#ED0000;font-weight:bold">**</span>';
     $dem = 1;
     
     // ĐIỀU KIỆN TÌM KIÊM
@@ -584,13 +585,12 @@
                     for($k=1; $k <= $adults; $k++){
                 ?>
                 <div class="mobile-info-pax">
-                    <p><span class="pax-count"><?= $dem ?></span><strong>Người lớn</strong></p>
+                    <p class="float-left-pax-adult"><span class="pax-count"><?= $dem ?></span><strong>Người lớn</strong><b class="color-text-CMND">tên đúng với CMND</b></p>
                     <div class="field-table">
-                        <div  style="font-size:12px;color:#777;font-style:italic;"><span style="color: red"> Lưu ý </span>: Tên hành khách vui lòng viết hoa, không dấu</div>
                         <div class="row">
-                            <div class="col-md-2 col-sm-4 col-xs-4">
+                            <div class="col-md-3 col-sm-4 col-xs-4">
                                 <div class="form-group">
-                                    <label>Quý danh</label> <br/>
+                                    <!-- <label>Quý danh</label> <br/> -->
                                     <select name="passenger_title[]" class="form-control">
                                         <option value="0">Ông</option>
                                         <option value="1">Bà</option>
@@ -600,13 +600,14 @@
                                     <input type="hidden" name="passenger_type[]" value="0" />
                                 </div>
                             </div>
-                            <div class="col-md-4 col-sm-8 col-xs-8">
+                            <div class="col-md-9 col-sm-8 col-xs-8">
                                 <div class="form-group"> 
-                                    <label>Họ và tên <?= $need ?><br /><span style="font-size:11px;color:#777;font-style:italic;">Ví dụ: NGUYEN VAN AN</span></label> 
-                                    <input type="text" name="passenger_name[]" class="passenger_name form-control" />
+                                    <!-- <label>Họ và tên <?= $need ?><br />
+                                    <span style="font-size:11px;color:#777;font-style:italic;">Ví dụ: NGUYEN VAN AN</span></label>  -->
+                                    <input type="text" name="passenger_name[]" class="passenger_name form-control" placeholder="NGUYEN TUAN ANH">
                                 </div>
                             </div>
-                            <div class="col-md-6 col-sm-12 col-xs-12">
+                            <div class="col-md-6 col-sm-12 col-xs-12 date-of-birth-adult hidden-xs hidden-sm hidden-md hidden-lg">
                                 <label>Ngày sinh<br /><span style="font-size:11px;color:#777;font-style:italic;">Ví dụ: 10/07/1989</span></label>
                                 <div class="form-group row">
                                     <div class="col-md-4 col-sm-4 col-xs-4">
@@ -659,7 +660,7 @@
                     <table class="field-table" width="100%">
                         <tr>
                             <td colspan="2" style="height:10px;">
-                                <p><strong>Hành lý <?php echo ($way_flight == 0 ? 'lượt đi' : '') ?></strong></p>
+                                <p><strong>Hành lý nên mua thêm</strong></p>
                             </td>
                         </tr>
                         <?php Dep_addBaggage($dep_airline, $dep_class);?>
@@ -688,11 +689,11 @@
                 <div>
                     <p><span class="pax-count"><?= $dem ?></span><strong>Trẻ em</strong></p>
                     <div class="field-table">
-                        <div  style="font-size:12px;color:#777;font-style:italic;"><span style="color: red"> Lưu ý </span>: Tên hành khách vui lòng viết hoa, không dấu</div>
+                        <!-- <div  style="font-size:12px;color:#777;font-style:italic;"><span style="color: red"> Lưu ý </span>: Tên hành khách vui lòng viết hoa, không dấu</div> -->
                         <div class="row">
                             <div class="col-md-2 col-sm-4 col-xs-4">
                                 <div class="form-group">
-                                    <label>Quý danh</label><br/>
+                                    <!-- <label>Quý danh</label><br/> -->
                                     <select name="passenger_title[]" class="form-control">
                                         <option value="0">Trẻ em trai</option>
                                         <option value="1">Trẻ em gái</option>
@@ -702,8 +703,8 @@
                             </div>
                             <div class="col-md-4 col-sm-8 col-xs-8">
                                 <div class="form-group">
-                                    <label>Họ và tên <?= $need ?><br /><span style="font-size:11px;color:#777;font-style:italic;">Ví dụ: NGUYEN VAN AN</span></label>
-                                    <input type="text" name="passenger_name[]" class="passenger_name form-control" />
+                                    <!-- <label>Họ và tên <?= $need ?><br /><span style="font-size:11px;color:#777;font-style:italic;">Ví dụ: NGUYEN VAN AN</span></label> -->
+                                    <input type="text" name="passenger_name[]" class="passenger_name form-control" placeholder="NGUYEN PHUOC VINH"/>
                                 </div>
                             </div>
                             <div class="col-md-6 col-sm-12 col-xs-12">
@@ -788,11 +789,11 @@
                 <div>
                     <p><span class="pax-count"><?= $dem ?></span><strong>Em bé</strong></p>
                     <div class="field-table">
-                        <div  style="font-size:12px;color:#777;font-style:italic;"><span style="color: red"> Lưu ý </span>: Tên hành khách vui lòng viết hoa, không dấu</div>
+                        <!-- <div  style="font-size:12px;color:#777;font-style:italic;"><span style="color: red"> Lưu ý </span>: Tên hành khách vui lòng viết hoa, không dấu</div> -->
                         <div class="row">
                             <div class="col-md-2 col-sm-4 col-xs-4">
                                 <div class="form-group">
-                                    <label>Quý danh</label><br/>
+                                    <!-- <label>Quý danh</label><br/> -->
                                     <select name="passenger_title[]" class="form-control">
                                         <option value="0">Em bé trai</option>
                                         <option value="1">Em bé gái</option>
@@ -802,8 +803,8 @@
                             </div>
                             <div class="col-md-4 col-sm-8 col-xs-8">
                                 <div class="form-group">
-                                    <label>Họ và tên <?= $need ?><br /><span style="font-size:11px;color:#777;font-style:italic;">Ví dụ: NGUYEN VAN AN</span></label>
-                                    <input type="text" name="passenger_name[]" class="passenger_name form-control" />
+                                    <!-- <label>Họ và tên <?= $need ?><br /><span style="font-size:11px;color:#777;font-style:italic;">Ví dụ: NGUYEN VAN AN</span></label> -->
+                                    <input type="text" name="passenger_name[]" class="passenger_name form-control" placeholder="NGUYEN MANH BAO"/>
                                 </div>
                             </div>
                             <div class="col-md-6 col-sm-12 col-xs-12">
@@ -862,7 +863,8 @@
                 <div class="gap gap-small hidden-xs"></div>
                 <h3 class="title hidden-xs">Thông tin liên hệ</h3>
                 <div class="mobile-info-pax">
-                    <p style="margin:0 0 5px 0px;">(<?= $need ?>) Vui lòng cung cấp đầy đủ thông tin chi tiết liên hệ của bạn bên dưới để chúng có thể nhanh chóng liên hệ với bạn khi cần thiết.</p>
+                    <p style="margin:0 0 5px 0px;">(<?= $attentionStart ?>) Vui lòng cung cấp đầy đủ thông tin chi tiết liên hệ chính xác: họ tên, số ĐT chính, gmail</p>
+                    <div class="err-info" id="err_info"></div>
                     <div class="field-table">
                         <div class="row">
                             <div class="col-md-2 col-sm-2 col-xs-4">
@@ -879,20 +881,20 @@
                             <div class="col-md-5 col-sm-5 col-xs-8">
                                 <div class="form-group">
                                     <label for="contact_name" style="font-weight:bold">Họ và tên <?= $need ?></label>
-                                    <input type="text" name="contact_name" id="contact_name" class="form-control"  /> 
+                                    <input type="text" name="contact_name" id="contact_name" class="form-control" placeholder="NGUYEN TUAN ANH"/> 
                                 </div>
                             </div>
                             <div class="col-md-5 col-sm-5 col-xs-12">
                                 <div class="form-group">
                                     <label for="contact_phone" style="font-weight:bold">Điện thoại di động <?= $need ?></label> 
-                                    <input type="text" name="contact_phone" id="contact_phone"   class="form-control" />
+                                    <input type="text" name="contact_phone" id="contact_phone" class="form-control" />
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div  class="col-md-7 col-sm-7 col-xs-12" >
                                 <div class="form-group">
-                                    <label for="contact_email" style="font-weight:bold">Email </label> 
+                                    <label for="contact_email" style="font-weight:bold">Gmail <?= $need ?></label> 
                                     <input type="text" name="contact_email" id="contact_email" class="form-control" />
                                 </div>
                             </div>

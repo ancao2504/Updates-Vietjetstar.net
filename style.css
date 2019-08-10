@@ -118,17 +118,18 @@ section button:hover {
 }
 
 /* ANCAO */
-.home-h3-link li.margin-left-home-links {
-    position: relative;
-    left: 15px;
-}
-.add-icon-hot {
-    width: 35px;
-}
-
+.home-h3-link li.margin-left-home-links{position:relative;left:15px}
+.add-icon-hot{width:35px}
 /* PAGE THÔNG TIN HÀNH KHÁCH */
 .config-info-padding-top{padding-top:10px}
+.color-text-CMND{color:#ED0000;font-weight:400;padding-left:20px}
 input[class*="passenger_name"], input[id*="contact_name"]{text-transform:uppercase}
+/* PAGE THANH TOÁN */
+.text-transfer,.text-office,.text-home{position:absolute;padding-left:5px}
+.note-text-transfer,.note-text-office,.note-text-home{text-align:justify;margin-top:5px!important}
+/* PAGE HOÀN TẤT ĐƠN HÀNG */
+.logo img{height:auto!important;width:auto!important}
+.color-phone-order-booking{color:#E10000}
 @media (max-width:767px) {
   #frmBookingFlight .gap-mini{margin:0}
   .mobile-margin-bottom-progressbar{margin-bottom:0!important}
@@ -151,6 +152,12 @@ input[class*="passenger_name"], input[id*="contact_name"]{text-transform:upperca
   #content_office .mb30{margin-bottom:10px!important;margin-top:-10px}
   #content_athome .mobile-methods-content-athome{margin-top:-5px;padding:0!important}
   #content_athome .mb30{margin-bottom:10px!important;margin-top:-15px}
+  .mobile-label-departure,.mobile-label-arrvial{height:40px;line-height:40px;background:#e67e22;font-weight:700;color:#fff}
+  .mobile-left-label-departure,.mobile-left-label-arrvial{padding-left:10px;float:left}
+  .mobile-right-depart-date strong{float:right;padding-right:10px}
+  .csm-booking-order{width:auto}
+  .csm-quality-order{width:auto}
+  .mobile-width-order{width:auto!important}
 }
 
 /* IPAD */

@@ -107,9 +107,9 @@
         if($val['type'] == 2)
             $infants ++;
     }
-    if($children != 0)
+    if($children == 0 || $children != 0)
         $qty_children = ', '.$children.' trẻ em';
-    if($infants != 0)
+    if($infants == 0 || $infants != 0)
         $qty_infants = ', '.$infants.' trẻ sơ sinh.';
     
     if(!isset($_SESSION[$booking_id]['sendmail'])){
@@ -136,11 +136,12 @@
         </div>
         <div id="mainDisplay">
             <div class="row">
-                <h1 class="complete-title"><?php the_title(); ?></h1>
-                <h2>Mã đơn hàng: <strong class="order-number"><?= $result['name'] ?></strong></h2>
+                <!-- <h1 class="complete-title"><?php the_title(); ?></h1> -->
+                <h2>Booking: <strong class="order-number"><?= $result['name'] ?></strong></h2>
                 <div>
                     <p>Booker sẽ liên hệ quý khách trong thời gian sớm nhất (giờ làm việc) để xác thực thông tin đăng ký và giá vé của thời điểm xử lý.</p>
-                    <p>Sau quá trình xác nhận này quý khách cần chuyển khoản thanh toán để bảo vệ giá. Sau khi chuyển khoản thành công quý khách vui lòng gọi vào số <strong><?php echo ot_get_option('phone_office'); ?><?php echo (ot_get_option('phone_mobile') != '' ? ' - '.ot_get_option('phone_mobile') : ''); ?></strong>.</p>
+                    <?php $phoneLast = '0909 58 8080'; ?>
+                    <p>Sau quá trình xác nhận này quý khách cần chuyển khoản thanh toán để bảo vệ giá. Sau khi chuyển khoản thành công quý khách vui lòng gọi vào số <strong class="color-phone-order-booking"><?php echo ot_get_option('phone_office'); ?><?php echo (ot_get_option('phone_mobile') != '' ? ' - '.$phoneLast : ''); ?></strong>.</p>
                     <?php if(!empty($result['email'])){ ?>
                     <p>Chi tiết thông tin chuyến bay và mã vé sẽ được gửi tới email: <strong><?= $result['email'] ?></strong></p>
                     <?php } else { ?>
@@ -169,13 +170,13 @@
                             <td width="20%">Số hành khách:</td>
                             <td><strong><?= $adults ?> người lớn<?= $qty_children.$qty_infants?></strong></td>
                         </tr>
-                        <tr>
+                        <!-- <tr>
                             <td>Ngày đi:</td>
                             <td><strong><?= $depart_date ?></strong></td>
                             <? if($way_flight == 0)
                                 echo '<td>Ngày về:</td><td><strong>'.$return_date.'</strong></td>';
                                 ?>
-                        </tr>
+                        </tr> -->
                     </table>
                     <!--HANH TRINH CHUYEN BAY-->
                     <?php
@@ -196,7 +197,7 @@
                         ?>
                     <table class="field-table">
                         <tr>
-                            <td colspan="4" class="go-icon"><i class="fa  fa-plane"></i> Khởi hành từ <strong><?= $dep_source ?></strong></td>
+                            <td colspan="4" class="go-icon"><i class="fa  fa-plane"></i> Chiều đi từ <strong><?= $dep_source ?></strong></td>
                         </tr>
                         <?php foreach($dep_int as $ht):
                             $dep_logo=get_stylesheet_directory_uri()."/images/inter_airline_icon/".$ht['airline_code'].".gif";
@@ -232,7 +233,7 @@
                             <td colspan="4"></td>
                         </tr>
                         <tr>
-                            <td colspan="4" class="back-icon">Khởi hành từ <strong><?= $ret_from ?></strong></td>
+                            <td colspan="4" class="back-icon">Chiều về từ <strong><?= $ret_from ?></strong></td>
                         </tr>
                         <?php foreach($ret_int as $ht):
                             $ret_logo=get_stylesheet_directory_uri()."/images/inter_airline_icon/".$ht['airline_code'].".gif";
@@ -269,28 +270,14 @@
                             ?>
                     <table class="field-table">
                         <tr>
-                            <td>Mã đơn hàng:</td>
-                            <td><strong><?= $result['name'] ?></strong></td>
-                            <td>Trạng thái:</td>
-                            <td><strong>Chưa xác nhận</strong></td>
-                        </tr>
-                        <tr>
-                            <td width="15%">Chuyến bay:</td>
-                            <td><strong><?= $way_flight_text ?></strong></td>
-                            <td width="20%">Số hành khách:</td>
-                            <td><strong><?= $adults ?> người lớn<?= $qty_children.$qty_infants?></strong></td>
-                        </tr>
-                        <tr>
-                            <td>Ngày đi:</td>
-                            <td><strong><?= $depart_date ?></strong></td>
-                            <? if($way_flight == 0)
-                                echo '<td>Ngày về:</td><td><strong>'.$return_date.'</strong></td>';
-                                ?>
+                            <td class="csm-booking-order"><strong><?= $result['name'] ?></strong></td>
+                            <td class="csm-info-flight-order hidden-xs"><strong><?= $way_flight_text ?></strong></td>
+                            <td class="csm-quality-order"><strong><?= $adults ?> người lớn<?= $qty_children.$qty_infants?></strong></td>
                         </tr>
                     </table>
                     <table class="field-table hidden-xs">
                         <tr>
-                            <td colspan="4" class="go-icon"><i class="fa fa-plane box-icon-border box-icon-left round box-icon-white box-icon-small"></i></i>Khởi hành từ <strong><?= $GLOBALS['CODECITY'][$dep_source] ?></strong></td>
+                            <td colspan="4" class="go-icon"><i class="fa fa-plane box-icon-border box-icon-left round box-icon-white box-icon-small"></i></i>Chiều đi từ <strong><?= $GLOBALS['CODECITY'][$dep_source] ?></strong></td>
                         </tr>
                         <tr>
                             <td class="logo <?= $dep_logo ?>"></td>
@@ -309,7 +296,7 @@
                             <td colspan="4"></td>
                         </tr>
                         <tr>
-                            <td colspan="4" class="back-icon"><i class="fa fa-plane box-icon-border box-icon-left round box-icon-white box-icon-small  fa-flip-horizontal"></i> Khởi hành từ <strong><?= $GLOBALS['CODECITY'][$ret_source] ?></strong></td>
+                            <td colspan="4" class="back-icon"><i class="fa fa-plane box-icon-border box-icon-left round box-icon-white box-icon-small  fa-flip-horizontal"></i> Chiều về từ <strong><?= $GLOBALS['CODECITY'][$ret_source] ?></strong></td>
                         </tr>
                         <tr>
                             <td class="logo <?= $ret_logo ?>"></td>
@@ -371,8 +358,8 @@
                             else echo format_price($total_amount);?>
                         </span>
                     </p>
-                    <label style="display: inline-block;width: 145px;margin-right: 10px;">Hình thức thanh toán:</label> <span style="font-weight:bold;font-size:16px;color:#59A800"><?= $payment_type ?></span>.</p>
-                    <label style="display: inline-block;width: 145px;margin-right: 10px;">Trạng thái thanh toán:</label> <span style="font-weight:bold;font-size:16px;color:#59A800"><?= $is_paid; ?></span>.</p>
+                    <label style="display: inline-block;width: 145px;margin-right: 10px;" class="mobile-width-order">Hình thức thanh toán:</label> <span style="font-weight:bold;font-size:16px;color:#59A800"><?= $payment_type ?></span>.</p>
+                    <label style="display: inline-block;width: 145px;margin-right: 10px;" class="mobile-width-order">Trạng thái thanh toán:</label> <span style="font-weight:bold;font-size:16px;color:#59A800"><?= $is_paid; ?></span>.</p>
                 </div>
             </div>
         </div>

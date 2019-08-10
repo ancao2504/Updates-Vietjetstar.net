@@ -297,7 +297,8 @@
             				})
             		})
             }
-            $(document).ready(function(){$("#loadresultfirst").html('<?=$waiting_notices?>')});
+            // HIDDEN LOAD RESULFT FIRST
+            //$(document).ready(function(){$("#loadresultfirst").html('<?=$waiting_notices?>')});
             
         </script>
         <?php
@@ -395,10 +396,10 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-6 col-sm-6 col-xs-6">
+                        <div class="col-md-6 col-sm-6 col-xs-6 hidden-xs">
                             <label>Ngày đi : <strong><?= $depart_fulltext ?></strong></label>
                         </div>
-                        <div class="col-md-6 col-sm-6 col-xs-6">
+                        <div class="col-md-6 col-sm-6 col-xs-6 hidden-xs">
                             <?php if($direction!=1){ ?>
                             <label>Ngày về : <strong><?= $returndate_fulltext ?></strong></label>
                             <?php } ?>
@@ -406,10 +407,22 @@
                     </div>
                 </div>
                 <!--Thong Tin Chang Di-->
-                <div class="label-departure  row">
-                    <div ><i class="fa fa-plane box-icon-border box-icon-left round box-icon-white box-icon-small"></i>Chiều đi&nbsp;&nbsp;&nbsp;&nbsp; 
+                <div class="label-departure row hidden-xs">
+                    <div >
+                        <i class="fa fa-plane box-icon-border box-icon-left round box-icon-white box-icon-small"></i>
+                        Chiều đi&nbsp;&nbsp;&nbsp;&nbsp;
                         <?= $GLOBALS['CODECITY'][$source] ?> <i class="fa fa-long-arrow-right"></i>&nbsp;&nbsp;<?= $GLOBALS['CODECITY'][$destination] ?> 
                     </div>
+                </div>
+                <div class="row mobile-label-departure hidden-sm hidden-md hidden-lg">
+                    <div class="mobile-left-label-departure">
+                        <?= $GLOBALS['CODECITY'][$source] ?> 
+                        <i class="fa fa-long-arrow-right"></i>&nbsp;&nbsp;
+                        <?= $GLOBALS['CODECITY'][$destination] ?>   
+                    </div>
+                    <div class="mobile-right-depart-date">
+                        <strong><?= $depart_fulltext ?></strong>         
+                    </div>        
                 </div>
                 <div class="row">
                     <ul class="row date-picker hidden-xs">
@@ -450,10 +463,20 @@
                     </table>
                 </div>
                 <?php if(isset($_SESSION['search']['way_flight']) && $_SESSION['search']['way_flight'] == "0"){ ?>
-                <div  class="label-return  row">
+                <div  class="label-return row hidden-xs">
                     <div><i class="fa fa-plane box-icon-border box-icon-left round box-icon-white box-icon-small"></i>Chiều về&nbsp;&nbsp;&nbsp;&nbsp; 
                         <?= $GLOBALS['CODECITY'][$destination] ?> <i class="fa fa-long-arrow-right"></i>&nbsp;&nbsp;<?= $GLOBALS['CODECITY'][$source] ?>
                     </div>
+                </div>
+                <div class="row mobile-label-arrvial hidden-sm hidden-md hidden-lg">
+                    <div class="mobile-left-label-arrvial">
+                        <?= $GLOBALS['CODECITY'][$destination] ?> 
+                        <i class="fa fa-long-arrow-right"></i>&nbsp;&nbsp;
+                        <?= $GLOBALS['CODECITY'][$source] ?>   
+                    </div>
+                    <div class="mobile-right-depart-date">
+                        <strong><?= $returndate_fulltext ?></strong>         
+                    </div>        
                 </div>
                 <div class="row">
                     <ul class="row date-picker hidden-xs">
