@@ -41,10 +41,10 @@ function processResult(data){
 		var org=JSON.parse(data);
 		for(var data in org[0]){
 			var airline="";
-			if(org[0][data].airline=="Vietnam Airlines") airline="vna";
-			if(org[0][data].airline=="Vietjet") airline="vj";
-            if(org[0][data].airline=="Jetstar") airline="js";
+            if(org[0][data].airline=="Vietnam Airlines") airline="vna";
             if(org[0][data].airline=="Bamboo Airways") airline="qh";
+			if(org[0][data].airline=="Vietjet") airline="vj";
+			if(org[0][data].airline=="Jetstar") airline="js";
 			
 			var newrow=addrow(airline,org[0][data],0);
 			$("#result #OutBound>tbody").append(newrow);
@@ -59,10 +59,10 @@ function processResult(data){
 		if(Direction==0){
 			for(var data in org[1]){
 				var airline="";
-				if(org[1][data].airline=="Vietnam Airlines") airline="vna";
-				if(org[1][data].airline=="Vietjet") airline="vj";
-                if(org[1][data].airline=="Jetstar") airline="js";
+                if(org[1][data].airline=="Vietnam Airlines") airline="vna";
                 if(org[1][data].airline=="Bamboo Airways") airline="qh";
+				if(org[1][data].airline=="Vietjet") airline="vj";
+				if(org[1][data].airline=="Jetstar") airline="js";
 	
 				var newrow=addrow(airline,org[1][data],1);
 				$("#result #InBound>tbody").append(newrow);
@@ -354,10 +354,18 @@ $( function() {
                 $(".noneselect").css('display', 'inline-block');
                 $(".noneselect").fadeOut(2000);
 
-                $('html, body').animate({
-                    scrollTop: $("div.label-departure").offset().top
-                }, 2000);
-
+                if($(window).width() >= 992 || $(window).width() <= 780) {
+                    $('html, body').animate({
+                        scrollTop: $("div.label-departure").offset().top
+                    }, 2000);
+                }
+                
+                if($(window).width() < 768) {
+                    $('html, body').animate({
+                        scrollTop: $(".mobile-label-departure").offset().top
+                    }, 2000);
+                }
+                
                 return false;
             }
         }
@@ -368,32 +376,43 @@ $( function() {
                 $(".noneselect").css('display', 'inline-block');
                 $(".noneselect").fadeOut(2000);
 
-                $('html, body').animate({
-                    scrollTop: $("div.label-departure").offset().top
-                }, 2000);
+                if($(window).width() >= 992 || $(window).width() <= 780) {
+                    $('html, body').animate({
+                        scrollTop: $("div.label-departure").offset().top
+                    }, 2000);
+                }
 
-                $('html, body').animate({
-                    scrollTop: $("div.mobile-label-departure").offset().top
-                }, 2000);
-
+                if($(window).width() < 768) {
+                    $('html, body').animate({
+                        scrollTop: $(".mobile-label-departure").offset().top
+                    }, 2000);
+                }
+                
                 return false;
             }
+            
             if(!$('input[name="selectflightret"]:checked').val())
             {
                 $(".noneselect").text('Bạn chưa chọn chuyến bay lượt về');
                 $(".noneselect").css('display', 'inline-block');
                 $(".noneselect").fadeOut(2000);
 
-                $('html, body').animate({
-                    scrollTop: $("div.label-return").offset().top
-                }, 2000);
-
-                $('html, body').animate({
-                    scrollTop: $("div.mobile-label-arrvial").offset().top
-                }, 2000);
-
+                if($(window).width() >= 992 || $(window).width() <= 780) {
+                    $('html, body').animate({
+                        scrollTop: $("div.label-return").offset().top
+                    }, 2000);
+                }
+                
+                if($(window).width() < 768) {
+                    $('html, body').animate({
+                        scrollTop: $(".mobile-label-arrvial").offset().top
+                    }, 2000);
+                }
+            
                 return false;
             }
+            
+            
         }
         for(i=0;i<XhrRequest.length;i++){
             if(XhrRequest[i] && XhrRequest[i].readystate != 4)
@@ -569,5 +588,7 @@ function generateform(depdate,retdate){
 				$('#flightselectbt').addClass('scrollDown');
 				$('.moreScroll').text('Kéo xuống để xem thêm kết quả');
 			}
-		});
-	});
+        });
+        
+    });
+    
