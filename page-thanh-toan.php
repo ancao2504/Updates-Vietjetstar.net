@@ -218,6 +218,7 @@
                         <?php $phoneCusAdd = '0909 58 8080'; ?>
                         <span class="accountant-phone-text"><?php echo $phoneCusAdd.' - '.ot_get_option('accountant_phone'); ?></span> <br/>
                         <div class="sms-transfer">Cú pháp: "0989 456 789 mua ve JS3153SDA"</div>
+                        <p class="staff-notification">Nhân viên chúng tôi sẽ gọi lại quý khách để hỗ trợ thanh toán. Vui lòng chuyển cùng hệ thống để thuận tiện hơn. Tài khoản sẽ được cung cấp trong quá trình gọi điện.</p>
                     </p>
                     <p>
                         <button type="submit" name="sm_transfer_method" class="button redcus pull-right mb30"> 

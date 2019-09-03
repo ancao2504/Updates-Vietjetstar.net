@@ -143,9 +143,9 @@
                     <?php $phoneLast = '0909 58 8080'; ?>
                     <p>Sau quá trình xác nhận này quý khách cần chuyển khoản thanh toán để bảo vệ giá. Sau khi chuyển khoản thành công quý khách vui lòng gọi vào số <strong class="color-phone-order-booking"><?php echo ot_get_option('phone_office'); ?><?php echo (ot_get_option('phone_mobile') != '' ? ' - '.$phoneLast : ''); ?></strong>.</p>
                     <?php if(!empty($result['email'])){ ?>
-                    <p>Chi tiết thông tin chuyến bay và mã vé sẽ được gửi tới email: <strong><?= $result['email'] ?></strong></p>
+                    <p>Chi tiết thông tin chuyến bay và code vé (mã đặt chỗ) sẽ được gửi tới email: <strong><?= $result['email'] ?></strong></p>
                     <?php } else { ?>
-                    <p>Chi tiết thông tin chuyến bay và mã vé sẽ được gửi tới số điện thoại: <strong><?= $result['phone'] ?></strong></p>
+                    <p>Chi tiết thông tin chuyến bay và code vé (mã đặt chỗ) sẽ được gửi tới số điện thoại: <strong><?= $result['phone'] ?></strong></p>
                     <?php } ?>
                 </div>
                 <div class="clearfix"></div>

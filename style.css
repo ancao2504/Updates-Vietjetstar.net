@@ -129,6 +129,7 @@ input[class*="passenger_name"], input[id*="contact_name"]{text-transform:upperca
 .note-text-transfer,.note-text-office,.note-text-home{text-align:justify;margin-top:5px!important}
 .mobile-mothods-content-first{padding-left:0px!important}
 .sms-transfer{margin-top:5px}
+.staff-notification{margin-top:5px!important};
 /* PAGE HOÀN TẤT ĐƠN HÀNG */
 .logo img{height:auto!important;width:auto!important}
 .color-phone-order-booking{color:#E10000}
@@ -150,7 +151,7 @@ input[class*="passenger_name"], input[id*="contact_name"]{text-transform:upperca
   #wgbtnsearch{width:100%!important}
   .methods{margin:0}
   .mobile-mothods-content-first{padding-left:0!important}
-  #content_transfer .mb30{margin-bottom:0!important}
+  #content_transfer .mb30{margin-bottom:5px!important}
   #content_office .mb30{margin-bottom:10px!important;margin-top:-10px}
   #content_athome .mobile-methods-content-athome{margin-top:-5px;padding:0!important}
   #content_athome .mb30{margin-bottom:10px!important;margin-top:-15px}
@@ -160,6 +161,7 @@ input[class*="passenger_name"], input[id*="contact_name"]{text-transform:upperca
   .csm-booking-order{width:auto}
   .csm-quality-order{width:auto}
   .mobile-width-order{width:auto!important}
+  .staff-notification{margin-bottom:5px!important}
 }
 
 /* IPAD */
